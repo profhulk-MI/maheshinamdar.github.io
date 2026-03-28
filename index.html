@@ -22,37 +22,47 @@
         .profile-img {
             width: 180px;
             border-radius: 50%;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
 
         .left-section {
             text-align: center;
         }
 
-        .section-title {
+        .name {
             font-weight: 600;
-            margin-top: 30px;
-            margin-bottom: 10px;
-            color: #0f172a;
+            margin-bottom: 5px;
         }
 
-        .link-card {
+        .tagline {
+            font-size: 0.9rem;
+            color: #64748b;
+            margin-bottom: 15px;
+        }
+
+        .link-item {
+            display: block;
+            margin: 6px 0;
+            color: #0f172a;
+            font-weight: 500;
+        }
+
+        .link-item:hover {
+            text-decoration: underline;
+        }
+
+        .section-title {
+            font-weight: 600;
+            margin-top: 25px;
+            margin-bottom: 10px;
+        }
+
+        .card-lite {
             padding: 12px 16px;
             border-radius: 8px;
             background: white;
             border: 1px solid #e2e8f0;
             margin-bottom: 10px;
-            transition: all 0.2s ease;
-        }
-
-        .link-card:hover {
-            background: #f1f5f9;
-            transform: translateY(-2px);
-        }
-
-        a {
-            text-decoration: none;
-            color: inherit;
         }
 
         .highlight {
@@ -67,66 +77,70 @@
 <div class="container">
     <div class="row">
 
-        <!-- LEFT: Profile -->
+        <!-- LEFT: Profile + Links -->
         <div class="col-md-4 left-section">
+
             <img src="assets/profile.jpg" alt="Profile" class="profile-img">
 
-            <h3>Mahesh Inamdar</h3>
-            <p class="highlight">
+            <h4 class="name">Mahesh Inamdar</h4>
+            <div class="tagline">
                 AI Researcher <br>
                 Medical Imaging | XAI | UQ
+            </div>
+
+            <!-- Links BELOW image -->
+            <div>
+                <a href="https://github.com/yourusername" class="link-item" target="_blank">GitHub</a>
+                <a href="https://scholar.google.com/yourprofile" class="link-item" target="_blank">Google Scholar</a>
+                <a href="https://medium.com/@yourprofile" class="link-item" target="_blank">Medium</a>
+                <a href="https://linkedin.com/in/yourprofile" class="link-item" target="_blank">LinkedIn</a>
+            </div>
+
+        </div>
+
+        <!-- RIGHT: About + Work -->
+        <div class="col-md-8">
+
+            <!-- About Me -->
+            <h5 class="section-title">About Me</h5>
+            <p class="highlight">
+                I am an AI researcher specializing in medical imaging, with a focus on building 
+                lightweight and reliable deep learning systems for real-world deployment.
             </p>
 
             <p class="highlight">
-                Building reliable and lightweight AI systems for real-world deployment.
+                My work integrates explainable AI (XAI) and uncertainty quantification (UQ) 
+                to improve trust and robustness in clinical decision systems, particularly 
+                for stroke detection using CT imaging.
             </p>
-        </div>
 
-        <!-- RIGHT: Content -->
-        <div class="col-md-8">
-
-            <!-- Links -->
-            <h5 class="section-title">Links</h5>
-
-            <a href="https://github.com/yourusername" target="_blank">
-                <div class="link-card">GitHub → Code & Projects</div>
-            </a>
-
-            <a href="https://scholar.google.com/yourprofile" target="_blank">
-                <div class="link-card">Google Scholar → Publications</div>
-            </a>
-
-            <a href="https://medium.com/@yourprofile" target="_blank">
-                <div class="link-card">Medium → Technical Writing</div>
-            </a>
-
-            <a href="https://linkedin.com/in/yourprofile" target="_blank">
-                <div class="link-card">LinkedIn → Experience</div>
-            </a>
+            <p class="highlight">
+                I am interested in bridging the gap between research and production by designing 
+                efficient architectures, scalable pipelines, and interpretable models.
+            </p>
 
             <!-- Work -->
             <h5 class="section-title">Selected Work</h5>
 
             <a href="https://github.com/yourusername/project1" target="_blank">
-                <div class="link-card">
+                <div class="card-lite">
                     <b>Stroke Detection (CT)</b><br>
                     <span class="highlight">Lightweight CNN + Attention + UQ</span>
                 </div>
             </a>
 
             <a href="https://github.com/yourusername/project2" target="_blank">
-                <div class="link-card">
+                <div class="card-lite">
                     <b>Adverse Weather Detection</b><br>
                     <span class="highlight">DETR-based robust object detection</span>
                 </div>
             </a>
 
             <!-- Research -->
-            <h5 class="section-title">Research</h5>
-
-            <div class="link-card">
-                Lightweight Deep Learning for Stroke Detection  
-                <div class="highlight">Focus: explainability & uncertainty</div>
+            <h5 class="section-title">Research Focus</h5>
+            <div class="card-lite">
+                Explainable and uncertainty-aware deep learning for medical imaging  
+                <div class="highlight">Focus on reliability and deployment readiness</div>
             </div>
 
             <!-- Contact -->
