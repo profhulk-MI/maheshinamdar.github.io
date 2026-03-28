@@ -5,43 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mahesh Inamdar</title>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #ffffff;
-            color: #111827;
+            max-width: 1000px;
+            margin: auto;
+            padding: 40px 20px;
+            line-height: 1.6;
+            color: #111;
         }
 
         .container {
-            max-width: 1000px;
-            margin-top: 50px;
-        }
-
-        .profile-img {
-            width: 160px;
-            border-radius: 50%;
-            margin-bottom: 15px;
+            display: flex;
+            gap: 40px;
         }
 
         .left {
-            text-align: center;
+            width: 30%;
         }
 
-        .name {
-            font-weight: 600;
-            margin-bottom: 5px;
+        .right {
+            width: 70%;
         }
 
-        .tagline {
-            font-size: 0.9rem;
-            color: #555;
-            margin-bottom: 15px;
+        img {
+            width: 180px;
+            border-radius: 6px;
+        }
+
+        h1 {
+            margin-top: 10px;
+            font-size: 24px;
         }
 
         a {
-            color: #1a73e8;
+            color: #1a0dab;
             text-decoration: none;
         }
 
@@ -49,14 +47,17 @@
             text-decoration: underline;
         }
 
-        .section-title {
-            font-weight: 600;
-            margin-top: 20px;
-            margin-bottom: 8px;
+        .section {
+            margin-top: 30px;
         }
 
-        .text-muted {
+        .small {
             color: #555;
+            font-size: 0.9rem;
+        }
+
+        ul {
+            padding-left: 18px;
         }
     </style>
 </head>
@@ -64,69 +65,93 @@
 <body>
 
 <div class="container">
-    <div class="row">
 
-        <!-- LEFT COLUMN -->
-        <div class="col-md-4 left">
+    <!-- LEFT -->
+    <div class="left">
 
-            <img src="assets/profile.jpg" class="profile-img">
+        <img src="assets/profile.jpg" alt="Profile">
 
-            <div class="name">Mahesh Inamdar</div>
-            <div class="tagline">
-                AI Researcher <br>
-                Medical Imaging | XAI | UQ
-            </div>
+        <h1>Mahesh Inamdar</h1>
 
-            <!-- Simple text links -->
+        <p class="small">
+            AI Researcher <br>
+            Medical Imaging <br>
+            XAI | Uncertainty Quantification
+        </p>
+
+        <p>
+            <a href="https://github.com/yourusername">GitHub</a><br>
+            <a href="https://scholar.google.com/yourprofile">Google Scholar</a><br>
+            <a href="https://medium.com/@yourprofile">Medium</a><br>
+            <a href="https://linkedin.com/in/yourprofile">LinkedIn</a>
+        </p>
+
+    </div>
+
+    <!-- RIGHT -->
+    <div class="right">
+
+        <!-- ABOUT -->
+        <div class="section">
+            <h3>About</h3>
             <p>
-                <a href="https://github.com/yourusername" target="_blank">GitHub</a><br>
-                <a href="https://scholar.google.com/yourprofile" target="_blank">Google Scholar</a><br>
-                <a href="https://medium.com/@yourprofile" target="_blank">Medium</a><br>
-                <a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a>
+                I am an AI researcher working on medical imaging, with a focus on 
+                building lightweight and reliable deep learning systems for real-world deployment.
             </p>
 
+            <p>
+                My work integrates explainable AI (XAI) and uncertainty quantification (UQ) 
+                to improve trust and robustness in clinical systems, particularly for stroke detection.
+            </p>
+
+            <p>
+                I am interested in bridging research and industry by designing efficient architectures 
+                and scalable AI pipelines.
+            </p>
         </div>
 
-        <!-- RIGHT COLUMN -->
-        <div class="col-md-8">
-
-            <h5 class="section-title">About Me</h5>
-            <p class="text-muted">
-                I am an AI researcher working on medical imaging, focusing on building 
-                lightweight and reliable deep learning models for real-world applications.
-            </p>
-
-            <p class="text-muted">
-                My work integrates explainable AI (XAI) and uncertainty quantification (UQ) 
-                to improve trust and robustness in clinical systems, particularly for 
-                stroke detection using CT images.
-            </p>
-
-            <p class="text-muted">
-                I am interested in bridging research and industry by designing efficient 
-                architectures and scalable AI pipelines.
-            </p>
-
-            <h5 class="section-title">Selected Work</h5>
+        <!-- WORK -->
+        <div class="section">
+            <h3>Selected Work</h3>
 
             <p>
-                <b><a href="https://github.com/yourusername/project1" target="_blank">
+                <b><a href="https://github.com/yourusername/project1">
                 Stroke Detection (CT)</a></b><br>
-                <span class="text-muted">Lightweight CNN + Attention + UQ</span>
+                <span class="small">Lightweight CNN + Attention + UQ</span>
             </p>
 
             <p>
-                <b><a href="https://github.com/yourusername/project2" target="_blank">
+                <b><a href="https://github.com/yourusername/project2">
                 Adverse Weather Detection</a></b><br>
-                <span class="text-muted">DETR-based object detection</span>
+                <span class="small">DETR-based object detection</span>
             </p>
+        </div>
 
-            <h5 class="section-title">Contact</h5>
-            <p class="text-muted">yourmail@gmail.com</p>
+        <!-- RESEARCH -->
+        <div class="section">
+            <h3>Research</h3>
 
+            <ul>
+                <li>
+                    Lightweight deep learning for stroke detection  
+                    <span class="small">(Explainability + uncertainty focus)</span>
+                </li>
+                <li>
+                    Multi-scale feature extraction for medical imaging
+                </li>
+            </ul>
+        </div>
+
+        <!-- CONTACT -->
+        <div class="section">
+            <h3>Contact</h3>
+            <p class="small">
+                yourmail@gmail.com
+            </p>
         </div>
 
     </div>
+
 </div>
 
 </body>
