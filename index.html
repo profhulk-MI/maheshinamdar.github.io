@@ -1,182 +1,244 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mahesh Inamdar</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mahesh Inamdar</title>
 
-    <style>
-        body {
-            font-family: Georgia, "Times New Roman" sans-serif;
-            max-width: 1000px;
-            margin: auto;
-            padding: 40px 20px;
-            line-height: 1.6;
-            color: #111;
+<style>
+body {
+    font-family: Georgia, "Times New Roman", serif;
+    max-width: 1000px;
+    margin: auto;
+    padding: 40px 20px;
+    line-height: 1.6;
+    color: #111;
 
-            background:
-            linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)),
-            url('assets/bg1.jpg');
-            background-size: cover;
-            background-attachment: fixed;
+    background:
+        linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)),
+        url('assets/bg.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+}
 
-            .left {
-            width: 30%;
-            position: sticky;
-            top: 40px;   /* distance from top while scrolling */
-            height: fit-content;
-        }
+.container {
+    display: flex;
+    gap: 50px;
+}
 
-        .container {
-            display: flex;
-            gap: 40px;
-        }
+.left {
+    width: 30%;
+    position: sticky;
+    top: 40px;
+    height: fit-content;
+}
 
-        .left {
-            width: 30%;
-        }
+.right {
+    width: 70%;
+}
 
-        .right {
-            width: 70%;
-        }
+img {
+    width: 180px;
+    border-radius: 6px;
+}
 
-        img {
-            width: 180px;
-            border-radius: 6px;
-        }
+h1 {
+    margin-top: 10px;
+}
 
-        h1 {
-            margin-top: 10px;
-            font-size: 24px;
-        }
+h3 {
+    border-bottom: 1px solid #eee;
+    padding-bottom: 5px;
+}
 
-        a {
-            color: #1a0dab;
-            text-decoration: none;
-        }
+a {
+    color: #0b57d0;
+    text-decoration: none;
+}
 
-        a:hover {
-            text-decoration: underline;
-        }
+a:hover {
+    text-decoration: underline;
+}
 
-        .section {
-            margin-top: 30px;
-        }
+.small {
+    color: #555;
+    font-size: 0.9rem;
+}
 
-        .small {
-            color: #555;
-            font-size: 0.9rem;
-        }
+.section {
+    margin-top: 30px;
+}
 
-        ul {
-            padding-left: 18px;
-        }
-    </style>
+/* NAV TABS */
+.tabs {
+    margin-bottom: 20px;
+}
+
+.tab {
+    margin-right: 15px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.tab.active {
+    text-decoration: underline;
+}
+
+/* HIDE SECTIONS */
+.content {
+    display: none;
+}
+
+.content.active {
+    display: block;
+}
+
+.project {
+    margin-bottom: 15px;
+}
+</style>
+
+<script>
+function showTab(tabId) {
+    let contents = document.querySelectorAll('.content');
+    contents.forEach(c => c.classList.remove('active'));
+
+    let tabs = document.querySelectorAll('.tab');
+    tabs.forEach(t => t.classList.remove('active'));
+
+    document.getElementById(tabId).classList.add('active');
+    document.getElementById(tabId + '-tab').classList.add('active');
+}
+</script>
+
 </head>
 
 <body>
 
 <div class="container">
 
-    <!-- LEFT -->
-    <div class="left">
+<!-- LEFT -->
+<div class="left">
 
-        <img src="assets/profile.jpg" alt="Profile">
+<img src="assets/profile.jpg">
 
-        <h1>Mahesh Inamdar</h1>
+<h1>Mahesh Inamdar</h1>
 
-        <p class="small">
-            AI Researcher (Applied Research) <br>
-            Medical Imaging <br>
-            XAI | Uncertainty Quantification
-        </p>
+<p class="small">
+AI Researcher <br>
+Medical Imaging <br>
+XAI | Uncertainty Quantification
+</p>
 
-        <p>
-            <a href="https://github.com/profhulk-MI">GitHub</a><br>
-            <a href="https://scholar.google.com/citations?hl=en&user=Aru-8wQAAAAJ&view_op=list_works&sortby=pubdate">Google Scholar</a><br>
-            <a href="https://medium.com/@xMahesh">Medium</a><br>
-            <a href="https://www.linkedin.com/in/xmahesh/">LinkedIn</a>
-        </p>
+<p>
+<br><a href="https://github.com/profhulk-MI">GitHub</a><br>
+<br><a href="https://scholar.google.com/citations?hl=en&user=Aru-8wQAAAAJ&view_op=list_works&sortby=pubdate">Google Scholar</a><br>
+<br><a href="https://medium.com/@xMahesh">Medium</a><br>
+<br><a href="https://www.linkedin.com/in/xmahesh/">LinkedIn</a>
+</p>
 
-        <p class="small">
-        <b>Contact</b><br>
-        inamdarrr@outlook.com/ appuinamdar@gmail.com
-        </p>
-    </p>
+<p class="small">
+<b>Contact</b><br>
+inamdarrr@outlook.com/ appuinamdar@gmail.com
+</p>
 
-    </div>
-
-    <!-- RIGHT -->
-    <div class="right">
-
-        <!-- ABOUT -->
-        <div class="section">
-            <h3>About me</h3>
-            <p>
-                I am an AI researcher working on medical imaging, with a focus on 
-                building lightweight and reliable deep learning systems for real-world deployment.
-                My work integrates explainable AI and uncertainty quantification
-                to improve trust and robustness in clinical systems.
-                I am interested in bridging research and industry by designing efficient architectures 
-                and scalable AI pipelines.
-            </p>
-        </div>
-
-        <!-- WORK -->
-        <div class="section">
-            <h3>Selected Work</h3>
-
-            <p>
-                <b><a href="https://github.com/profhulk-MI/Ischemic-Stroke-Classification/blob/main/README.md">
-                Ischemic Brain Stroke Detection (CT)</a></b><br>
-                <span class="small">Lightweight CNN + Attention + Uncertainty Quantification</span>
-            </p>
-
-             <p>
-                <b><a href="https://github.com/profhulk-MI/Deep-Learning-Research/blob/main/README.md">
-                Prostate Cancer Detection Using Deep Learning </a></b><br>
-            </p>
-
-        <div class="section">
-        <h3>Research Focus</h3>
-    
-        <ul>
-            <li>
-            Lightweight and efficient deep learning models for healthcare applications  
-            <span class="small">(Explainability + uncertainty focus)</span>
-            </li>
-        <li>
-            Multi-scale feature extraction for complex medical imaging data
-        </li>
-        <li>
-            Development of computer vision systems for detection, classification, and segmentation
-        </li>
-        <li>
-            Integration of Explainable AI (XAI) for improved interpretability and clinical trust
-        </li>
-        <li>
-            Uncertainty quantification for reliable decision-making in safety-critical systems
-        </li>
-        <li>
-            Attention-based and transformer architectures for enhanced feature learning
-        </li>
-        <li>
-            Hybrid AI approaches combining deep learning with classical machine learning methods
-        </li>
-        <li>
-            Self-supervised and representation learning for data-efficient training
-        </li>
-        <li>
-            End-to-end machine learning pipeline development (data processing to deployment)
-        </li>
-        <li>
-            Model validation, calibration, and performance analysis for real-world applications
-        </li>
-    </ul>
 </div>
 
-    </div>
+<!-- RIGHT -->
+<div class="right">
 
+<!-- TABS -->
+<div class="tabs">
+<span id="home-tab" class="tab active" onclick="showTab('home')">Home</span>
+<span id="projects-tab" class="tab" onclick="showTab('projects')">Projects</span>
+<span id="publications-tab" class="tab" onclick="showTab('publications')">Publications</span>
+</div>
+
+<!-- HOME -->
+<div id="home" class="content active">
+
+<h3>About</h3>
+<p>
+I build lightweight and reliable AI systems for medical imaging, focusing on 
+explainable AI and uncertainty quantification for real-world deployment.
+</p>
+
+</div>
+
+<!-- PROJECTS -->
+<div id="projects" class="content">
+
+<h3>Projects</h3>
+
+<div class="project">
+<b>Stroke Detection (CT)</b><br>
+<a href="https://github.com/yourusername/project1">GitHub</a> |
+<a href="#">Video Demo</a>
+</div>
+
+
+</div>
+
+<!-- PUBLICATIONS -->
+<div id="publications" class="content">
+
+<h3>Publications</h3>
+
+<p><b>TrustNet – Reliable AI for Stroke Detection</b><br>
+<a href="#">GitHub</a><br>
+<span class="small">
+Lightweight architecture with UQ + XAI. Published in Nature Scientific Reports (2026)
+</span>
+</p>
+
+<p><b>Dual-Stream Deep Learning for Stroke Classification</b><br>
+<a href="#">GitHub</a><br>
+<span class="small">
+Attention + multi-scale + RVFL. IEEE Access (2025)
+</span>
+</p>
+
+<p><b>MWLD-Based Stroke Classification</b><br>
+<a href="#">GitHub</a><br>
+<span class="small">
+Weber descriptor-based ML for CT classification. Wiley (2025)
+</span>
+</p>
+
+<p><b>Attention-Based Stroke Classification</b><br>
+<a href="#">GitHub</a><br>
+<span class="small">
+Dual attention + patch embedding. Informatics in Medicine Unlocked
+</span>
+</p>
+
+<p><b>Self-Supervised Learning for Stroke Analysis</b><br>
+<a href="#">GitHub</a><br>
+<span class="small">
+Contrastive learning for CT representation
+</span>
+</p>
+
+<p><b>Prostate Cancer Detection</b><br>
+<a href="#">GitHub</a><br>
+<span class="small">
+Deep learning gland segmentation. IEEE Access (2023)
+</span>
+</p>
+
+<h3>Research Collaborations</h3>
+
+<ul>
+<li>Hypertension detection review (2024)</li>
+<li>Motion-sensitive descriptor for hypertension (2024)</li>
+<li>Heart anomaly detection (2024)</li>
+<li>Brain tumor detection review (2023)</li>
+</ul>
+
+</div>
+
+</div>
 </div>
 
 </body>
