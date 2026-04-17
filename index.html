@@ -23,19 +23,21 @@ body {
 
 .container {
     display: flex;
-    gap: 50px;
+    gap: 60px;
+    align-items: flex-start;
 }
 
 .left {
-    width: 30%;
+    flex: 0 0 260px;   /* fixed clean width */
     position: sticky;
     top: 40px;
-    height: fit-content;
 }
 
 .right {
-    width: 70%;
+    padding-top: 5px;
+    max-width: 720px;
 }
+
 
 img {
     width: 180px;
@@ -71,29 +73,61 @@ a:hover {
 }
 
 .tabs {
-    margin-bottom: 20px;
+    display: flex;
+    gap: 10px;
+    margin-bottom: 25px;
 }
 
 .tab {
-    margin-right: 15px;
+    padding: 8px 16px;
+    border-radius: 20px;
+    background: rgba(0,0,0,0.05);
     cursor: pointer;
-    font-weight: 600;
+    font-weight: 500;
+    transition: all 0.25s ease;
+}
+
+.tab:hover {
+    background: rgba(0,0,0,0.1);
 }
 
 .tab.active {
-    text-decoration: underline;
+    background: #0b57d0;
+    color: white;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
 }
 
 .content {
     display: none;
+    animation: fadeIn 0.3s ease;
 }
 
 .content.active {
     display: block;
 }
 
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
 .project {
-    margin-bottom: 20px;
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.project-text {
+    flex: 1;
+}
+
+.project-video {
+    flex: 1;
+}
+
+.project-video video {
+    width: 100%;
+    border-radius: 6px;
 }
 
 iframe {
@@ -190,24 +224,22 @@ in clinical systems.
 <h3>Projects</h3>
 
 <div class="project">
-<b>Ischemic Brain Stroke Detection (CT)</b><br>
 
-<a href="https://github.com/profhulk-MI">GitHub</a>
+    <!-- LEFT: TEXT -->
+    <div class="project-text">
+        <b>Ischemic Brain Stroke Detection (CT)</b><br><br>
+        This project presents a comprehensive suite of deep learning and machine learning models for the detection, localization, and classification of brain stroke from CT images. 
+        The work focuses on building clinically reliable AI systems by integrating uncertainty quantification and explainable AI into lightweight and efficient architectures.
+        <a href="https://github.com/profhulk-MI/Ischemic-Stroke-Classification">GitHub</a><br><br>
+    </div>
 
-<br><br>
+    <!-- RIGHT: VIDEO -->
+    <div class="project-video">
+        <video controls poster="assets/thumnail.jpg">
+            <source src="assets/Brain Strokes.mp4" type="video/mp4">
+        </video>
+    </div>
 
-<video controls poster="assets/thumnail.jpg" width="100%">
-    <source src="assets/Brain Strokes" type="video/mp4">
-    Your browser does not support the video tag.
-</video>
-
-</div>
-
-<!-- OPTIONAL VIDEO -->
-<!-- Replace with your YouTube embed -->
-<!--
-<iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID"></iframe>
--->
 </div>
 
 </div>
@@ -215,12 +247,16 @@ in clinical systems.
 <!-- PUBLICATIONS -->
 <div id="publications" class="content">
 
-<h3>Publications</h3>
+<p>
+<b>
+<a href="https://www.nature.com/articles/s41598-026-37169-8">TrustNet – Reliable AI for Stroke Detection</a>
+</b><br>
+</p>
 
-<p><b>TrustNet – Reliable AI for Stroke Detection</b><br>
-<a href="#">GitHub</a><br>
 <span class="small">
-Lightweight architecture with UQ + XAI. Published in Nature Scientific Reports (2026)
+Designed a lightweight uncertainty aware deep learning model for detection and classification of ischemic brain strokes. 
+Achieved high diagnostic reliability with improved confidence estimation. 2026
+<a href="https://github.com/profhulk-MI/Ischemic-Stroke-Classification/tree/TrustNet">GitHub</a><br>
 </span>
 </p>
 
