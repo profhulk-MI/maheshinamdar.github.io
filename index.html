@@ -1,6 +1,5 @@
-
 <!DOCTYPE html>
-<html lang="en"> 
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -43,13 +42,14 @@ img {
     border-radius: 6px;
 }
 
-h1 {
+h2 {
     margin-top: 10px;
 }
 
 h3 {
     border-bottom: 1px solid #eee;
     padding-bottom: 5px;
+    margin-bottom: 10px;
 }
 
 a {
@@ -70,7 +70,6 @@ a:hover {
     margin-top: 30px;
 }
 
-/* NAV TABS */
 .tabs {
     margin-bottom: 20px;
 }
@@ -85,7 +84,6 @@ a:hover {
     text-decoration: underline;
 }
 
-/* HIDE SECTIONS */
 .content {
     display: none;
 }
@@ -95,17 +93,21 @@ a:hover {
 }
 
 .project {
-    margin-bottom: 15px;
+    margin-bottom: 20px;
+}
+
+iframe {
+    margin-top: 8px;
+    width: 100%;
+    height: 250px;
+    border: none;
 }
 </style>
 
 <script>
 function showTab(tabId) {
-    let contents = document.querySelectorAll('.content');
-    contents.forEach(c => c.classList.remove('active'));
-
-    let tabs = document.querySelectorAll('.tab');
-    tabs.forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.content').forEach(c => c.classList.remove('active'));
+    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
 
     document.getElementById(tabId).classList.add('active');
     document.getElementById(tabId + '-tab').classList.add('active');
@@ -121,7 +123,7 @@ function showTab(tabId) {
 <!-- LEFT -->
 <div class="left">
 
-<img src="assets/profile.jpg">
+<img src="assets/profile.jpg" alt="Mahesh Inamdar">
 
 <h2>Mahesh Inamdar</h2>
 
@@ -132,15 +134,16 @@ XAI | Uncertainty Quantification
 </p>
 
 <p>
-<br><a href="https://github.com/profhulk-MI">GitHub</a><br>
-<br><a href="https://scholar.google.com/citations?hl=en&user=Aru-8wQAAAAJ&view_op=list_works&sortby=pubdate">Google Scholar</a><br>
-<br><a href="https://medium.com/@xMahesh">Medium</a><br>
-<br><a href="https://www.linkedin.com/in/xmahesh/">LinkedIn</a>
+<a href="https://github.com/profhulk-MI">GitHub</a><br>
+<a href="https://scholar.google.com/citations?hl=en&user=Aru-8wQAAAAJ">Google Scholar</a><br>
+<a href="https://medium.com/@xMahesh">Medium</a><br>
+<a href="https://www.linkedin.com/in/xmahesh/">LinkedIn</a>
 </p>
 
 <p class="small">
 <b>Contact</b><br>
-inamdarrr@outlook.com/ appuinamdar@gmail.com
+inamdarrr@outlook.com<br>
+appuinamdar@gmail.com
 </p>
 
 </div>
@@ -160,23 +163,25 @@ inamdarrr@outlook.com/ appuinamdar@gmail.com
 
 <h3>About</h3>
 <p>
-I am an AI researcher working on medical imaging, with a focus on building lightweight and reliable deep learning systems for real-world deployment. 
-My work integrates explainable AI and uncertainty quantification to improve trust and robustness in clinical systems. 
-I am interested in bridging research and industry by designing efficient architectures and scalable AI pipelines.
+I am an AI researcher working on medical imaging, focused on building lightweight 
+and reliable deep learning systems for real-world deployment. My work integrates 
+explainable AI (XAI) and uncertainty quantification (UQ) to improve trust and robustness 
+in clinical systems.
 </p>
-<p>
-Research Focus
-Lightweight and efficient deep learning models for healthcare applications (Explainability + uncertainty focus)
-Multi-scale feature extraction for complex medical imaging data
-Development of computer vision systems for detection, classification, and segmentation
-Integration of Explainable AI (XAI) for improved interpretability and clinical trust
-Uncertainty quantification for reliable decision-making in safety-critical systems
-Attention-based and transformer architectures for enhanced feature learning
-Hybrid AI approaches combining deep learning with classical machine learning methods
-Self-supervised and representation learning for data-efficient training
-End-to-end machine learning pipeline development (data processing to deployment)
-Model validation, calibration, and performance analysis for real-world applications
-</p>
+
+<p><b>Research Focus</b></p>
+<ul>
+<li>Lightweight deep learning models for healthcare</li>
+<li>Multi-scale feature extraction for medical imaging</li>
+<li>Explainable AI (XAI) for interpretability</li>
+<li>Uncertainty quantification for reliability</li>
+<li>Attention and transformer-based architectures</li>
+<li>Hybrid AI (deep learning + classical ML)</li>
+<li>Self-supervised learning</li>
+<li>End-to-end ML pipelines</li>
+<li>Model validation and deployment readiness</li>
+</ul>
+
 </div>
 
 <!-- PROJECTS -->
@@ -185,11 +190,16 @@ Model validation, calibration, and performance analysis for real-world applicati
 <h3>Projects</h3>
 
 <div class="project">
-<b>Stroke Detection (CT)</b><br>
-<a href="https://github.com/yourusername/project1">GitHub</a> |
+<b>Ischemic Brain Stroke Detection (CT)</b><br>
+<a href="https://github.com/profhulk-MI">GitHub</a> |
 <a href="#">Video Demo</a>
-</div>
 
+<!-- OPTIONAL VIDEO -->
+<!-- Replace with your YouTube embed -->
+<!--
+<iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID"></iframe>
+-->
+</div>
 
 </div>
 
@@ -233,11 +243,15 @@ Contrastive learning for CT representation
 </span>
 </p>
 
-<p><b>Prostate Cancer Detection</b><br>
+<p><b>Prostate Cancer Detection Using Deep Learning</b><br>
 <a href="#">GitHub</a><br>
 <span class="small">
-Deep learning gland segmentation. IEEE Access (2023)
+Gland segmentation model. IEEE Access (2023)
 </span>
+</p>
+
+<p>
+A review on computer aided diagnosis of acute brain stroke, 2023 (<a href="#">Link</a>)
 </p>
 
 <h3>Research Collaborations</h3>
